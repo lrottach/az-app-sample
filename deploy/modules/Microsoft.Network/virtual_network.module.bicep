@@ -8,3 +8,9 @@
 //    Reference: https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep
 // 
 // ---------------------------------------------------------------------------------- 
+
+// Target Scope
+targetScope = 'resourceGroup'
+
+// Deployment Parameter
+param deploymentLocation string

@@ -22,7 +22,8 @@
         "eamodio.gitlens",
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "Equinusocio.moxer-icons"
       ]
     }
   }

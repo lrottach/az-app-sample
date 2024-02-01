@@ -1,3 +1,5 @@
+import { tagParameterObject, vnetParameterObject } from 'types/parameter.types.bicep'
+
 // ---------------------------------------------------------------------------------- 
 // 
 //    Type: Main 
@@ -11,3 +13,18 @@
 
 // Deployment Scope
 targetScope = 'subscription'
+
+// ------------------------------ 
+// Parameter Area 
+// ------------------------------ 
+
+// Deployment Parameter
+@allowed([ 'Switzerland North', 'Switzerland West', 'West Europe' ])
+param deploymentLocation string
+
+@description('Name of the target Resource Group for all resource deployments')
+param rgName string
+param tags tagParameterObject
+
+// Virtual Network Parameter
+param vnetProperties vnetParameterObject

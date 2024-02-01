@@ -10,7 +10,7 @@ on:
     - main
 
 env:
-  LOCATION: "eastus"
+  LOCATION: "westeurope"
   
 #Special permissions required for OIDC authentication
 permissions:
@@ -22,6 +22,7 @@ jobs:
   bicep-unit-tests:
     name: 'Bicep Unit Tests'
     runs-on: ubuntu-latest
+    environment: production
     # Bicep What-if / Validate functions also check if your role has permisisons to create the resources so we need full read/write permissions
     
     steps:

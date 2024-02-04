@@ -21,8 +21,6 @@ targetScope = 'resourceGroup'
 // Deployment Parameter
 param deploymentLocation string
 
-// Target Parameter
-
 // Virtual Network Parameter
 param vnetProperties vnetParameterObject
 
@@ -51,3 +49,4 @@ resource subnets 'Microsoft.Network/virtualNetworks/subnets@2023-06-01' = [for (
     addressPrefix: vnetProperties.subnetRanges[index]
   }
 }]
+

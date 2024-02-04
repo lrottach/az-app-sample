@@ -28,3 +28,28 @@ param tags tagParameterObject
 
 // Virtual Network Parameter
 param vnetProperties vnetParameterObject
+
+// ------------------------------ 
+// Resource Area 
+// ------------------------------ 
+
+// Resource Group
+resource rg 'Microsoft.Resources/resourceGroups@2023-07-01' = {
+  name: rgName
+  location: deploymentLocation
+  tags: tags
+}
+
+// ------------------------------ 
+// Module Area 
+// ------------------------------ 
+
+// Azure Virtual Network
+module vnet 'modules/Microsoft.Network/virtual_network.module.bicep' = {
+  scope: rg
+  name: 'deploy-${vnetProperties.name}'
+  params: {
+    deploymentLocation: deploymentLocation
+    vnetProperties: vnetProperties
+  }
+}
